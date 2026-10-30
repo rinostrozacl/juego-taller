@@ -1,0 +1,123 @@
+:root {
+  color-scheme: dark;
+  --bg-0: #030712;
+  --bg-1: #0a1630;
+  --neon-cyan: #00ffc8;
+  --neon-pink: #ff4fd8;
+  --text: #e8f7ff;
+  --muted: #8fb0c8;
+  font-family: "Orbitron", "Trebuchet MS", "Segoe UI", sans-serif;
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--bg-0);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Orbitron"), local("Arial Black"), local("Trebuchet MS");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  touch-action: manipulation;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0, 255, 200, 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(255, 79, 216, 0.1), transparent 50%),
+    linear-gradient(160deg, var(--bg-0), var(--bg-1) 55%, #050a14);
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 1000px;
+  padding: 12px;
+}
+
+.shell {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.top {
+  text-align: center;
+  margin: 0;
+}
+
+.brand {
+  margin: 0;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  text-shadow:
+    0 0 12px rgba(0, 255, 200, 0.7),
+    0 0 28px rgba(0, 255, 200, 0.35);
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+.tag {
+  margin: 2px 0 0;
+  font-size: clamp(0.85rem, 2.4vw, 1.05rem);
+  color: var(--neon-pink);
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 10px rgba(255, 79, 216, 0.55);
+}
+
+#game {
+  display: block;
+  width: min(960px, calc(100vw - 24px));
+  max-height: calc(100dvh - 140px);
+  border: 1px solid rgba(0, 255, 200, 0.35);
+  border-radius: 12px;
+  background: #050816;
+  box-shadow:
+    0 0 0 1px rgba(255, 79, 216, 0.15),
+    0 0 40px rgba(0, 255, 200, 0.12),
+    0 18px 40px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.18);
+  }
+}
+
+@media (max-width: 600px) {
+  .hint {
+    font-size: 0.75rem;
+  }
+}

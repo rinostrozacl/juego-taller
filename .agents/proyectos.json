@@ -1,0 +1,11 @@
+{
+  "proyectos": [
+    {
+      "slug": "juego-taller",
+      "titulo": "Code Runner: Escape de los Bugs",
+      "repo": "rinostrozacl/juego-taller",
+      "url": "https://juego-taller.codepulse.cl",
+      "estado": "en_desarrollo"
+    }
+  ]
+}
